@@ -37,7 +37,7 @@ def convolution_operator(frame ,filter_size,stride):
         index_list = index(index_list,filter_size,stride,frame)
         
     final_tensor = np.asarray(final_tensor)
-    final_tensor = final_tensor.reshape(math.floor((frame.shape[0]-filter_size.shape[0])/stride),math.floor((frame.shape[1]-filter_size.shape[1])/stride))
+    final_tensor = final_tensor.reshape(math.floor((frame.shape[0]-filter_size.shape[0])/stride)+1,math.floor((frame.shape[1]-filter_size.shape[1])/stride)+1)
     
     return final_tensor
 
